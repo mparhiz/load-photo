@@ -1,0 +1,69 @@
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 60%;
+}
+
+.back-button {
+  position: fixed;
+  left: 30px;
+  bottom: 100px;
+}
+
+.gray-toggle {
+  text-align: -webkit-center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.gray-toggle .input[type='checkbox'] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.gray-toggle label {
+  display: inline-flex;
+}
+
+.gray-toggle .label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 50px;
+  height: 25px;
+  background: radial-gradient(red, rgb(255, 123, 0), rgb(251, 255, 1));
+  display: block;
+  border-radius: 25px;
+  position: relative;
+}
+
+.gray-toggle .label:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 21px;
+  height: 21px;
+  background: #fff;
+  border-radius: 21px;
+  transition: 0.3s;
+}
+
+.gray-toggle .input:checked + .label {
+  background: grey;
+}
+
+.gray-toggle .input:checked + .label:after {
+  left: calc(100% - 18px);
+  transform: translateX(-25%);
+}
+
+.gray-toggle .label:active:after {
+  width: 28px;
+}

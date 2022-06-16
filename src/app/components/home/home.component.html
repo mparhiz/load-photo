@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="paginator-container">
+    <button
+      (click)="onPreviousPage()"
+      class="button-10 paginator-item"
+      title="Previous"
+      [disabled]="pageNumber === 1"
+    >
+      &#60;&#60;
+    </button>
+    <label>Page: </label>
+    <select
+      id="pages"
+      style="margin-left: 0;"
+      class="paginator-item"
+      (change)="onloadNewPhotos('page', $event)"
+    >
+      <option
+        [value]="page"
+        *ngFor="let page of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+        [selected]="page === 1"
+      >
+        {{ page }}
+      </option>
+    </select>
+    <label>Limit: </label>
+    <select
+      style="margin-left: 0;"
+      class="paginator-item"
+      (change)="onloadNewPhotos('limit', $event)"
+    >
+      <option
+        [value]="limit"
+        *ngFor="let limit of [3, 5, 10, 20, 50, 100]"
+        [selected]="limit === 5"
+      >
+        {{ limit }}
+      </option>
+    </select>
+    <button
+      (click)="onNextPage()"
+      class="button-10 paginator-item"
+      title="Next"
+      [disabled]="pageNumber === 10"
+    >
+      &#62;&#62;
+    </button>
+  </div>
+  <div class="card-container">
+    <app-photo-card
+      *ngFor="let photoInfo of photosInfo; let i = index"
+      [info]="photoInfo"
+      [photoNumber]="i + 1"
+    ></app-photo-card>
+  </div>
+</div>

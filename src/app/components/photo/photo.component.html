@@ -1,0 +1,16 @@
+<app-spinner *ngIf="isLoading"></app-spinner>
+<div class="gray-toggle">
+  <label>Grayscale</label>
+  <input
+    class="input"
+    type="checkbox"
+    id="switch"
+    (change)="onGrayscaleChange($event)"
+  /><label class="label" for="switch">Toggle</label>
+</div>
+<img
+  [@fadeInOut]="isLoading ? 'on' : 'off'"
+  src="{{ previewSignsrc }}"
+  class="centered"
+/>
+<button (click)="toExit()" class="back-button">Back</button>

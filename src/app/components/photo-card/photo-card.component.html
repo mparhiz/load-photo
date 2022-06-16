@@ -1,0 +1,5 @@
+<div @fadeInOut class="card" (click)="displayPhoto(info?.id!)">
+  <img [src]="info?.download_url" />
+  <p>{{ info?.author }}</p>
+  <p>{{ photoNumber }}</p>
+</div>

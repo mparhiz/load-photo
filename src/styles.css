@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--body-bg-color);
+}
+
+:root {
+  --header-bg-color: #302ae6;
+  --footer-bg-color: #536390;
+  --font-color: #e1e1ff;
+  --font-body-color: #424242;
+  --font-size: 26px;
+  --body-bg-color: #fff;
+  --spinner-color: rgb(19, 0, 63);
+}
+
+[data-theme='dark'] {
+  --header-bg-color: #9a97f3;
+  --footer-bg-color: #818cab;
+  --font-color: #424242;
+  --font-body-color: #e1e1ff;
+  --font-size: 30px;
+  --body-bg-color: #161625;
+  --spinner-color: rgb(201, 191, 255);
+}
+
+button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+
+  color: #fff;
+  background: linear-gradient(180deg, #4b91f7 0%, #367af6 100%);
+  background-origin: border-box;
+  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
+    inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:hover {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2),
+    0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
+    0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}
+
+button:disabled {
+  box-shadow: none;
+  background: linear-gradient(180deg, #adadad 0%, #adadad 100%);
+}
